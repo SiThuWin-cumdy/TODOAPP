@@ -1,21 +1,19 @@
+"use client";
 import Link from "next/link";
 import RemoveBtn from "@/components/buttons/RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 
 const getTopics = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/topics", {
-      cache: "no-store",
-    });
+    const res = await fetch(`http://localhost:3000/api/topics`);
     if (!res.ok) {
-      throw new Error("Failed to fetch data ");
+      throw new Error("Faild to get data");
     }
     return res.json();
   } catch (error) {
-    console.log("Error loading topic ," + error);
+    console.log("Error loading topic", error);
   }
 };
-
 export default async function TopicList() {
   const { topics } = await getTopics();
   return (
