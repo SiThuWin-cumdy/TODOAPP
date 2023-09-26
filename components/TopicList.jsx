@@ -21,7 +21,10 @@ export default async function TopicList() {
   return (
     <>
       {topics.map((t) => (
-        <div className="flex border border-slate-400 my-2 justify-between p-2 gap-5 items-start">
+        <div
+          key={t._id}
+          className="flex border border-slate-400 my-2 justify-between p-2 gap-5 items-start"
+        >
           <div>
             <h2 className="font-bold text-2xl"> {t.title}</h2>
             <div> {t.description} </div>
