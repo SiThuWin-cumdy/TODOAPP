@@ -1,7 +1,6 @@
 import Link from "next/link";
 import RemoveBtn from "@/components/buttons/RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
-import Topic from "@/models/topic";
 
 const getTopics = async () => {
   try {
