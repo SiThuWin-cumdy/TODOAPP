@@ -8,7 +8,7 @@ export default function RemoveBtn({ id }) {
     const confirm = window.confirm("Are u sure ?");
     if (confirm) {
       try {
-        const apiURL = "https://todoapp-rosy-nine.vercel.app";
+        const apiURL = process.env.NEXT_PUBLIC_API_ROUT;
         const res = await fetch(`${apiURL}/api/topics?id=${id}`, {
           method: "DELETE",
         });
@@ -17,7 +17,8 @@ export default function RemoveBtn({ id }) {
           throw new Error("Failed to delete");
         }
 
-        router.refresh("/");
+        router.refresh();
+        router.push("/");
       } catch (error) {
         console.log("eror", error);
       }

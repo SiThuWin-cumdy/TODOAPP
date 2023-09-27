@@ -15,7 +15,7 @@ export default function AddTopic() {
       return;
     }
     try {
-      const apiURL = "https://todoapp-rosy-nine.vercel.app";
+      const apiURL = process.env.NEXT_PUBLIC_API_ROUT;
       const res = await fetch(`${apiURL}/api/topics`, {
         method: "POST",
         headers: {
@@ -27,6 +27,7 @@ export default function AddTopic() {
       if (!res.ok) {
         throw new Error("Failed to create new topic");
       }
+      router.refresh();
       router.push("/");
     } catch (error) {
       console.log("error", error);

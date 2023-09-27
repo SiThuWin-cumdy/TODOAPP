@@ -11,7 +11,7 @@ export default function EditTopicComponent({ id, title, description }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const apiURL = "https://todoapp-rosy-nine.vercel.app";
+      const apiURL = process.env.NEXT_PUBLIC_API_ROUT;
       const res = await fetch(`${apiURL}/api/topics/${id}`, {
         method: "PUT",
         headers: {

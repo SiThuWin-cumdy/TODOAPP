@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  publicRuntimeConfig: {
+    MY_VAR: "test my var",
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
