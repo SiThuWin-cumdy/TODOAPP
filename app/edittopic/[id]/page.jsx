@@ -2,7 +2,8 @@ import EditTopicComponent from "@/components/EditTopicComponent";
 
 const getTopicById = async (id) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/topics/${id}`);
+    const apiURL = "https://todoapp-rosy-nine.vercel.app";
+    const res = await fetch(`${apiURL}/api/topics/${id}`);
     if (!res.ok) {
       throw new Error("Faild to get data");
     }

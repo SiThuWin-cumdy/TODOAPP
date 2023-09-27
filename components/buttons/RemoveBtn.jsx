@@ -8,7 +8,8 @@ export default function RemoveBtn({ id }) {
     const confirm = window.confirm("Are u sure ?");
     if (confirm) {
       try {
-        const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {
+        const apiURL = "https://todoapp-rosy-nine.vercel.app";
+        const res = await fetch(`${apiURL}/api/topics?id=${id}`, {
           method: "DELETE",
         });
 

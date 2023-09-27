@@ -5,7 +5,8 @@ import { HiPencilAlt } from "react-icons/hi";
 
 const getTopics = async () => {
   try {
-    const res = await fetch(`http://localhost:3000/api/topics`);
+    const apiURL = "https://todoapp-rosy-nine.vercel.app";
+    const res = await fetch(`${apiURL}/api/topics`);
     if (!res.ok) {
       throw new Error("Faild to get data");
     }

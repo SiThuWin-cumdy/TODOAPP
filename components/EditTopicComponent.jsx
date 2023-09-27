@@ -11,7 +11,8 @@ export default function EditTopicComponent({ id, title, description }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+      const apiURL = "https://todoapp-rosy-nine.vercel.app";
+      const res = await fetch(`${apiURL}/api/topics/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",

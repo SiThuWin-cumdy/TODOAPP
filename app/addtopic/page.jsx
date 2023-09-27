@@ -15,7 +15,8 @@ export default function AddTopic() {
       return;
     }
     try {
-      const res = await fetch("http://localhost:3000/api/topics", {
+      const apiURL = "https://todoapp-rosy-nine.vercel.app";
+      const res = await fetch(`${apiURL}/api/topics`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
