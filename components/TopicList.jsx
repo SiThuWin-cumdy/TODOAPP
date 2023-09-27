@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import RemoveBtn from "@/components/buttons/RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
@@ -15,7 +16,7 @@ const getTopics = async () => {
 };
 export default async function TopicList() {
   const response = await getTopics();
-  const { topics } = response;
+  const topics = response?.topics ? response.topics : [];
   return (
     <>
       {topics?.map((t) => (
